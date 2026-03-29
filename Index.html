@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Proyecto ARES</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: monospace;
+  background: black;
+  color: #00ffcc;
+}
+
+#sub {
+  position: fixed;
+  top: 10px;
+  right: 15px;
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+#firma {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  font-size: 12px;
+  opacity: 0.4;
+}
+
+.screen {
+  display: none;
+  padding: 20px;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.active { display: block; }
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background: black;
+  color: #00ffcc;
+  border: 1px solid #00ffcc;
+}
+
+.box {
+  border: 1px solid #00ffcc;
+  padding: 15px;
+  margin-top: 10px;
+  white-space: pre-wrap;
+}
+
+h1 {
+  border-bottom: 2px solid #00ffcc;
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<div id="sub">Nova Vitae</div>
+<div id="firma">pasteldepapa7 / nadiezz2</div>
+
+<!-- INICIO -->
+<div id="inicio" class="screen active">
+<h1>PROYECTO ARES</h1>
+<div class="box" id="typing"></div>
+<button id="btn" onclick="go('menu')" style="display:none;">Acceder</button>
+</div>
+
+<!-- MENU -->
+<div id="menu" class="screen">
+<h1>Panel del Sistema</h1>
+
+<button onclick="go('cams')">📹 Cámaras</button>
+<button onclick="go('correo')">📨 Correo Interno</button>
+<button onclick="go('archivos')">🗄️ Archivos</button>
+<button onclick="go('estado')">⚠️ Estado del Sistema</button>
+
+<button onclick="go('inicio')">Cerrar sesión</button>
+</div>
+
+<!-- CAMARAS -->
+<div id="cams" class="screen">
+<button onclick="go('menu')">⬅ Volver</button>
+<h1>Monitoreo de Cámaras</h1>
+<div class="box" id="camBox">Inicializando sistema...</div>
+</div>
+
+<!-- CORREO -->
+<div id="correo" class="screen">
+<button onclick="go('menu')">⬅ Volver</button>
+<h1>Correo Interno</h1>
+<div class="box">
+[INBOX]
+
+• Fallo en sistema de vigilancia  
+• Acceso no autorizado  
+• Revisar módulo ARES  
+
+Sin nuevos mensajes.
+</div>
+</div>
+
+<!-- ARCHIVOS -->
+<div id="archivos" class="screen">
+<button onclick="go('menu')">⬅ Volver</button>
+<h1>Repositorio de Archivos</h1>
+
+<button onclick="go('experimentos')">🧬 Experimentos</button>
+<button onclick="go('registros')">📜 Registros</button>
+<button onclick="go('incidentes')">⚠️ Incidentes</button>
+<button onclick="go('multimedia')">📁 Multimedia</button>
+<button onclick="go('logs')">📜 Logs</button>
+</div>
+
+<!-- EXPERIMENTOS -->
+<div id="experimentos" class="screen">
+<button onclick="go('archivos')">⬅ Volver</button>
+<h1>Experimentos</h1>
+
+<button onclick="go('exp1')">🧬 Experimento 01</button>
+<button onclick="go('exp2')">🧬 Experimento 02</button>
+<button onclick="go('exp3')">🧬 Experimento 03</button>
+</div>
+
+<!-- EXP 01 -->
+<div id="exp1" class="screen">
+<button onclick="go('experimentos')">⬅ Volver</button>
+<h1>Experimento 01</h1>
+<div class="box">
+Archivo: Experimento 01 — “Proyecto Génesis”
+Estado: Fallido
+Ubicación: Instalación 03
+Sujeto: NV-01 (“Noe”)
+Descripción:
+El Experimento 01 fue el primer intento de Nova Vitae Corporation de crear una forma de vida mejorada mediante la modificación genética utilizando el prototipo inicial del Virus A.
+El sujeto NV-01, conocido como “Noe”, fue seleccionado por su alta compatibilidad genética y sometido a la primera inyección controlada del virus.
+Objetivo:
+Crear un organismo humano superior con capacidades físicas y cognitivas mejoradas.
+Resultados:
+En las primeras horas tras la infección, el sujeto presentó:
+Aumento notable de fuerza
+Mayor resistencia física
+Incremento en la actividad cerebral
+Adaptación rápida al virus
+Sin embargo, el comportamiento del Virus A se volvió inestable.
+Fase Crítica:
+Mutación celular descontrolada
+Dolor extremo en el sujeto
+Deformación progresiva del cuerpo
+Fallo en funciones vitales
+El sujeto perdió completamente el control de su cuerpo antes de que los investigadores pudieran intervenir.
+Incidente:
+Durante la fase final, NV-01 sufrió un colapso biológico total dentro de la cámara de pruebas.
+El cuerpo no pudo soportar la velocidad de mutación inducida por el virus.
+Estado del sujeto:
+FALLECIDO
+Conclusión:
+El Experimento 01 demostró que el Virus A posee un enorme potencial de mejora… pero es demasiado inestable para su uso directo en humanos.
+</div>
+</div>
+
+<!-- EXP 02 -->
+<div id="exp2" class="screen">
+<button onclick="go('experimentos')">⬅ Volver</button>
+<h1>Experimento 02</h1>
+<div class="box">
+Archivo: Experimento 02 — “Proyecto Ares”
+Estado: Parcialmente Exitoso
+Ubicación: Instalación 03 — Sector de Bioingeniería
+Sujeto: Múltiples voluntarios (designados AR-02)
+Descripción:
+Tras el fracaso del Experimento 01 y la muerte del sujeto NV-01 (“Noe”), el equipo de Nova Vitae decidió no abandonar el Virus A, sino modificarlo.
+Se realizaron múltiples ajustes genéticos para estabilizar su comportamiento, reduciendo su agresividad inicial y aumentando su compatibilidad con el cuerpo humano. El resultado fue una nueva variante: Virus A-2.
+A diferencia del anterior, este no buscaba crear vida superior, sino mejorar soldados existentes.
+Objetivo:
+Desarrollar un patógeno capaz de aumentar capacidades físicas en combate sin causar muerte inmediata.
+Resultados:
+Los sujetos infectados mostraron:
+Aumento significativo de fuerza y resistencia
+Reducción del dolor físico
+Reflejos más rápidos
+Mayor agresividad en situaciones de estrés
+Sin embargo, también se detectaron efectos secundarios:
+Pérdida progresiva de control emocional
+Episodios de violencia extrema
+Deterioro mental con el tiempo
+Dependencia del virus para mantener estabilidad
+Conclusión:
+El Experimento 02 fue considerado un éxito parcial.
+El Virus A-2 logró su propósito como potenciador militar, pero su inestabilidad psicológica lo hace peligroso para uso prolongado.
+Nota del Director:
+"No creamos soldados perfectos… creamos armas vivientes. Y las armas, tarde o temprano, se vuelven contra quien las sostiene."
+</div>
+</div>
+
+<!-- EXP 03 -->
+<div id="exp3" class="screen">
+<button onclick="go('experimentos')">⬅ Volver</button>
+<h1>Experimento 03</h1>
+<div class="box">
+Archivo: Experimento 03 — “Proyecto TITÁN”
+Estado: Inestable / Altamente Peligroso
+Ubicación: Instalación 01 — Cámara de Contención Pesada
+Sujeto: TT-03 (“Titán-01”)
+Descripción:
+Tras los resultados del Virus A-2, Nova Vitae decidió ir más allá: no solo mejorar soldados… sino crear uno perfecto.
+Se desarrolló una nueva variante: Virus A-3, combinando el A-2 con mutaciones aceleradas y capacidad de crecimiento celular extremo.
+A diferencia de los experimentos anteriores, el sujeto no era un humano común. Fue seleccionado un individuo con alta resistencia genética y sometido a múltiples dosis progresivas del virus.
+Objetivo:
+Crear una unidad de combate imparable, capaz de adaptarse, regenerarse y superar cualquier fuerza humana.
+Resultados:
+En las primeras fases, el sujeto mostró:
+Fuerza descomunal (capaz de destruir estructuras)
+Regeneración acelerada de tejidos
+Resistencia extrema a armas convencionales
+Obediencia parcial a comandos
+Sin embargo, el verdadero cambio ocurrió con el aumento de dosis.
+Efecto de Sobredosis (Fase TITÁN):
+Crecimiento masivo del cuerpo (hasta +3 metros)
+Incremento exponencial de fuerza y masa muscular
+Formación de tejido mutado tipo armadura
+Aparición de extremidades adicionales en algunos casos
+Efectos secundarios críticos:
+Pérdida total de identidad humana
+Inteligencia reducida a instinto básico de caza
+Imposibilidad de control total
+Hostilidad hacia TODO organismo vivo
+Incidente:
+Durante la fase final, TT-03 rompió la contención en menos de 3 minutos.
+El equipo de seguridad fue neutralizado.
+El sujeto mostró capacidad de adaptación en combate.
+Estado actual del sujeto:
+DESCONOCIDO
+Conclusión:
+El Experimento 03 superó todas las expectativas físicas… pero fracasó como arma controlable.
+Nota del Director:
+"Querían un dios de la guerra. Olvidaron que los dioses no obedecen."
+</div>
+</div>
+
+<!-- REGISTROS -->
+<div id="registros" class="screen">
+<button onclick="go('archivos')">⬅ Volver</button>
+<h1>Registros</h1>
+
+<button onclick="go('virusA')">🧪 Virus A</button>
+</div>
+
+<div id="virusA" class="screen">
+<button onclick="go('registros')">⬅ Volver</button>
+<h1>Virus A</h1>
+<div class="box">
+Archivo: Clasificado — Origen del Virus A
+Nivel de Acceso: ALFA-NEGRO
+Estado: Activo
+Descripción General:
+El denominado “Virus A” es el agente biológico base responsable de todos los proyectos de mejora humana desarrollados por Nova Vitae Corporation.
+Toda variante posterior (A-2, A-3 y [DATOS REDACTADOS]) proviene directamente de este núcleo original.
+Origen:
+El Virus A no fue creado desde cero.
+Registros internos indican que el material base fue obtenido tras un incidente relacionado con anomalías biológicas no identificadas, similares a los casos documentados por la Fundación SCP.
+En particular, fragmentos genéticos presentan coincidencias parciales con:
+SCP-008 (agente infeccioso de reanimación celular)
+SCP-002 (estructura biológica capaz de alterar materia viva)
+Nota: La conexión oficial con estos objetos ha sido negada públicamente.
+Propiedades del Virus A:
+Capacidad de reescribir ADN humano en tiempo real
+Adaptación extrema a diferentes organismos
+Alta tasa de mutación
+Interacción desconocida con tejido muerto y vivo
+Posible “inteligencia biológica” (no confirmada)
+Comportamiento:
+El Virus A no sigue patrones biológicos normales.
+En lugar de infectar únicamente, evoluciona junto al huésped, modificándose según:
+Estrés físico
+Estado mental
+Compatibilidad genética
+Esto provoca resultados impredecibles: desde mejoras físicas… hasta mutaciones letales.
+Incidente Inicial:
+El primer contacto con el Virus A resultó en la pérdida total del equipo de investigación original.
+Los registros de ese evento han sido marcados como:
+[TOTALMENTE REDACTADO]
+Derivados del Virus A:
+A partir de este agente se desarrollaron:
+Virus A-2: Estabilización parcial para uso militar (Proyecto Ares)
+Virus A-3: Mutación extrema para creación de súper soldados (Proyecto TITÁN)
+[A-4 — REDACTADO]: Información clasificada
+[A-Ω — REDACTADO]: Acceso denegado
+Advertencia Interna:
+El Virus A no está completamente bajo control.
+Algunos investigadores sugieren que no es una creación…
+sino un descubrimiento.
+Nota Final del Director:
+"No encontramos el Virus A… él nos encontró a nosotros."
+</div>
+</div>
+
+<!-- OTROS -->
+<div id="incidentes" class="screen">
+<button onclick="go('archivos')">⬅ Volver</button>
+<h1>Incidentes</h1>
+<div class="box">Sin registros críticos.</div>
+</div>
+
+<div id="multimedia" class="screen">
+<button onclick="go('archivos')">⬅ Volver</button>
+<h1>Multimedia</h1>
+<div class="box">Error de carga.</div>
+</div>
+
+<div id="logs" class="screen">
+<button onclick="go('archivos')">⬅ Volver</button>
+<h1>Logs</h1>
+<div class="box">Sistema activo.</div>
+</div>
+
+<!-- ESTADO -->
+<div id="estado" class="screen">
+<button onclick="go('menu')">⬅ Volver</button>
+<h1>Estado del Sistema</h1>
+<div class="box">
+Sistema activo  
+Seguridad inestable  
+</div>
+</div>
+
+<script>
+function go(id){
+document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+
+if(id==="cams"){
+let box=document.getElementById("camBox");
+box.innerHTML="Conectando...";
+setTimeout(()=>box.innerHTML="Sin señal...",1500);
+}
+}
+
+let text="Inicializando sistema...\nEscaneo biométrico...\nAcceso concedido.";
+let i=0;
+
+function escribir(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text[i];
+i++;
+setTimeout(escribir,25);
+}else{
+document.getElementById("btn").style.display="block";
+}
+}
+escribir();
+</script>
+
+</body>
+</html>
