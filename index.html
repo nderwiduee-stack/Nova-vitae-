@@ -93,19 +93,69 @@ h1 {
 
 <!-- CORREO -->
 <div id="correo" class="screen">
-<button onclick="go('menu')">⬅ Volver</button>
-<h1>Correo Interno</h1>
-<div class="box">
+  <button onclick="go('menu')">⬅ Volver</button>
+  <h1>Correo Interno</h1>
+
+  <!-- Lista de mensajes -->
+  <div id="inbox" class="box">
 [INBOX]
 
-• Fallo en sistema de vigilancia  
-• Acceso no autorizado  
-• Revisar módulo ARES  
-
-Sin nuevos mensajes.
+<button onclick="go('msg1')">• Mensaje de William</button>
+<button onclick="go('msg2')">• Fallo en sistema de vigilancia</button>
+<button onclick="go('msg3')">• Acceso no autorizado</button>
+<button onclick="go('msg4')">• Revisar módulo ARES</button>
+  </div>
 </div>
+
+<!-- Mensaje 1 -->
+<div id="msg1" class="screen">
+  <button onclick="go('correo')">⬅ Volver al INBOX</button>
+  <h1>Mensaje de William</h1>
+  <div class="box">
+De: William  
+Para: [Redacted]  
+Asunto: Contacto delicado  
+
+Redacted,  
+
+Hace poco tuve un encuentro con la *Insurgencia del Caos*. No me inspiraron confianza, pero conseguí mencionar ciertas verdades que podrían resultarte importantes. Hay detalles que no puedo dejar por escrito, y que solo se comprenden en persona.  
+
+Algunos puntos que surgieron son… complicados, y creo que lo mejor será que los discutamos cara a cara. No es un asunto menor; conviene actuar con cuidado y claridad.  
+
+Decime cuándo podés reunirte. Esto merece más que simples mensajes.  
+
+Atento,  
+**William**
+  </div>
 </div>
 
+<!-- Mensaje 2 -->
+<div id="msg2" class="screen">
+  <button onclick="go('correo')">⬅ Volver al INBOX</button>
+  <h1>Fallo en sistema de vigilancia</h1>
+  <div class="box">
+Detalles: El sistema de cámaras ha dejado de responder en varios sectores...
+  </div>
+</div>
+
+<!-- Mensaje 3 -->
+<div id="msg3" class="screen">
+  <button onclick="go('correo')">⬅ Volver al INBOX</button>
+  <h1>Acceso no autorizado</h1>
+  <div class="box">
+Detalles: Se detectó un inicio de sesión irregular desde terminal desconocida...
+  </div>
+</div>
+
+<!-- Mensaje 4 -->
+<div id="msg4" class="screen">
+  <button onclick="go('correo')">⬅ Volver al INBOX</button>
+  <h1>Revisar módulo ARES</h1>
+  <div class="box">
+Detalles: El módulo de control principal requiere mantenimiento urgente...
+  </div>
+</div>
+  
 <!-- ARCHIVOS -->
 <div id="archivos" class="screen">
 <button onclick="go('menu')">⬅ Volver</button>
